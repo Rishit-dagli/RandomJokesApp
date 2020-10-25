@@ -6,4 +6,4 @@
 
 This sample application shows how one can build a simple app to call an API using Retrofit 2.
 
-![](images/app_screen_1) ![](images/app_screen_2)
+![](images/app_screen_1.png) ![](images/app_screen_2.png)

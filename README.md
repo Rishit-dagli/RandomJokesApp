@@ -5,3 +5,5 @@
 ![Twitter Follow](https://img.shields.io/twitter/follow/rishit_dagli?style=social)
 
 This sample application shows how one can build a simple app to call an API using Retrofit 2.
+
+![](images/app_screen_1)

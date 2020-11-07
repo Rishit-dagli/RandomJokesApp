@@ -4,6 +4,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface JokesApi {
-    @GET
+    @GET("/")
     fun getJokes(): Call<List<Jokes>>
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RandomJokesApp</string>
+    <string name="generate_joke_button">Generate Joke</string>
 </resources>

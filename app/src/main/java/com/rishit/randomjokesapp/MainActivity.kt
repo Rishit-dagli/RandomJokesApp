@@ -55,7 +55,8 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Jokes>, response: Response<Jokes>) {
                 if (response.code() == 200){
                     val Jokes = response.body()!!
-
+                    println("From here")
+                    println(Jokes.joke)
                 }
             }
         })

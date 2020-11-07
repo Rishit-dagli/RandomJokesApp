@@ -6,6 +6,7 @@ import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.GsonBuilder
 import com.rishit.randomjokesapp.model.Jokes
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         val getJokeButton = findViewById<Button>(R.id.Generate)
         getJokeButton.setOnClickListener{ getData() }
+
+        val jokeTextview = findViewById(R.id.JokeText) as TextView
     }
 
     private fun getData() {
@@ -42,30 +45,28 @@ class MainActivity : AppCompatActivity() {
 
         val jokesApi = retrofit.create(JokesApi::class.java)
 
-        val call: Call<List<Jokes>> = jokesApi.getJokes()
+        val call: Call<Jokes> = jokesApi.getJokes()
 
-        call.enqueue(object : Callback<List<Jokes>> {
-            override fun onFailure(call: Call<List<Jokes>>, t: Throwable) {
+        call.enqueue(object : Callback<Jokes> {
+            override fun onFailure(call: Call<Jokes>, t: Throwable) {
                 Log.e("ERROR", t.message.toString())
             }
 
-            override fun onResponse(call: Call<List<Jokes>>, response: Response<List<Jokes>>) {
+            override fun onResponse(call: Call<Jokes>, response: Response<Jokes>) {
                 if (response.code() == 200){
                     val Jokes = response.body()!!
-                    for(joke in Jokes){
-                        println(joke.toString())
-                    }
+
                 }
             }
         })
 
-        fun isNetworkConnected(): Boolean {
-            val connectivityManager =
-                getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val activeNetwork = connectivityManager.activeNetwork
-            val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)
-            return networkCapabilities != null &&
-                    networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-        }
+//        fun isNetworkConnected(): Boolean {
+//            val connectivityManager =
+//                getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+//            val activeNetwork = connectivityManager.activeNetwork
+//            val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)
+//            return networkCapabilities != null &&
+//                    networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+//        }
     }
 }

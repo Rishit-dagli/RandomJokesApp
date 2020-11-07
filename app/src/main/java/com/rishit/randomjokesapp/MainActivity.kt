@@ -27,11 +27,11 @@ class MainActivity : AppCompatActivity() {
 
         val getJokeButton = findViewById<Button>(R.id.Generate)
         getJokeButton.setOnClickListener{ getData() }
-
-        val jokeTextview = findViewById<TextView>(R.id.JokeText)
     }
 
     private fun getData() {
+
+        val jokeTextview = findViewById<TextView>(R.id.JokeText)
 
         val gson = GsonBuilder()
             .setLenient()
@@ -55,8 +55,9 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Jokes>, response: Response<Jokes>) {
                 if (response.code() == 200){
                     val Jokes = response.body()!!
-                    println("From here")
-                    println(Jokes.joke)
+                    jokeTextview.text = Jokes.joke
+
+//                    println(Jokes.joke)
                 }
             }
         })

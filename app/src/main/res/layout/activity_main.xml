@@ -8,9 +8,10 @@
 
     <TextView
         android:id="@+id/JokeText"
+        style="@style/Widget.MaterialComponents.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="70dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Click the Generate Joke Button"

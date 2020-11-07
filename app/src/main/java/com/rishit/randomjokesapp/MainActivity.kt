@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val getJokeButton = findViewById<Button>(R.id.Generate)
         getJokeButton.setOnClickListener{ getData() }
 
-        val jokeTextview = findViewById(R.id.JokeText) as TextView
+        val jokeTextview = findViewById<TextView>(R.id.JokeText)
     }
 
     private fun getData() {

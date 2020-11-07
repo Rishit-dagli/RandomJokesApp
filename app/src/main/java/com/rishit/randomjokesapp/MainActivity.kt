@@ -1,8 +1,5 @@
 package com.rishit.randomjokesapp
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button

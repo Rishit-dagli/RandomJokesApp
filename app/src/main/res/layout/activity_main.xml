@@ -21,4 +21,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/Generate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contained button"
+        app:icon="@drawable/ic_baseline_transform_24"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

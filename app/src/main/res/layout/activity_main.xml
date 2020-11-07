@@ -10,12 +10,13 @@
         android:id="@+id/JokeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Click the Generate Joke Button"
         android:textAlignment="center"
         android:textColor="#2104DF"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -23,12 +24,16 @@
 
     <Button
         android:id="@+id/Generate"
+        style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:text="@string/generate_joke_button"
+        android:textSize="16sp"
         app:icon="@drawable/ic_baseline_transform_24"
-        style="@style/Widget.MaterialComponents.Button.Icon"
         app:iconPadding="4dp"
-        />
+        app:layout_constraintEnd_toEndOf="@+id/JokeText"
+        app:layout_constraintStart_toStartOf="@+id/JokeText"
+        app:layout_constraintTop_toBottomOf="@+id/JokeText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

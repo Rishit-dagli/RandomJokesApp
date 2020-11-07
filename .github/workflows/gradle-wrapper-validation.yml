@@ -1,0 +1,20 @@
+name: Validate Gradle Wrapper
+
+on: 
+  push:
+      branches:
+      - master
+  pull_request:
+    branches: 
+      - '*'
+
+jobs:
+  validation:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    name: Validation
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout latest code
+      uses: actions/checkout@v2
+    - name: Validate Gradle Wrapper
+      uses: gradle/wrapper-validation-action@v1
